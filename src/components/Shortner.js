@@ -27,7 +27,7 @@ export default function Shortner() {
     <div>
       <form onSubmit={HandleSubmit}>
         <label>
-          Enter Vote difference:
+          Enter URL:
           <input
             type="text"
             value={url}
