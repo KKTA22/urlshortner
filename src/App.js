@@ -1,28 +1,26 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import Login from './components/Login';
-import Home from './components/Home';
-import firebase from './services/firebase';
+import Login from "./components/Login";
+import Home from "./components/Home";
+import firebase from "./services/firebase";
 
-import './App.css';
-
-
+import "./App.css";
 
 function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged(user => {
+    firebase.auth().onAuthStateChanged((user) => {
       setUser(user);
-    })
-  }, [])
+    });
+  }, []);
 
   console.log(user);
 
   return (
     <div className="app">
       <h1>Welcome to Url shortner</h1>
-      {user ? <Home user={user}/>:<Login />}
+      {user ? <Home user={user} /> : <Login />}
     </div>
   );
 }

@@ -1,17 +1,15 @@
-import { Link } from 'react-router-dom';
-
-
+import { Link } from "react-router-dom";
 
 const MainHeader = () => {
   return (
-    <header >
+    <header>
       <nav>
         <ul>
           <li>
-            <Link to='/welcome'>Welcome</Link>
+            <Link to="/welcome">Welcome</Link>
           </li>
           <li>
-            <Link to='/products'>Products</Link>
+            <Link to="/products">Products</Link>
           </li>
         </ul>
       </nav>
