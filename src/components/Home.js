@@ -5,19 +5,23 @@ import Contact from "../pages/Contact";
 import Products from "../pages/Products";
 import MainHeader from "../components/MainHeader";
 import Shortner from "../components/Shortner";
+import "./home.css"
 
 const Home = ({ user }) => {
   return (
     <div>
       <MainHeader />
-      <h1>
+      <div className="sign">
+      <h1 >
         Hello, <span></span>
         {user.displayName}
       </h1>
-      <img src={user.photoURL} alt="" />
+      <img src={user.photoURL} style={{width:"10%"}} alt="" />
+      <p></p>
       <button className="button signout" onClick={() => auth.signOut()}>
         Sign out
       </button>
+      </div>
       <Routes>
         <Route path="/contact" element={<Contact />} />
         <Route path="/products" element={<Products />} />

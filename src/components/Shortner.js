@@ -11,7 +11,7 @@ export default function Shortner() {
       .reverse()
       .map((key, i) => (
         <p key={1 / i}>
-          Short url for {key} is {shrturls[key]}
+          Short url for <a href={key}>{key}</a> is <a href={shrturls[key]}>{shrturls[key]}</a>
         </p>
       ));
   };
@@ -37,8 +37,8 @@ export default function Shortner() {
       return (
         <h1>
           your shortened url for{" "}
-          <span style={{ color: "red" }}>{items.result.original_link}</span> is{" "}
-          <span style={{ color: "blue" }}>{items.result.full_short_link}</span>
+          <a href={items.result.original_link} style={{ color: "red" }}>{items.result.original_link}</a> is{" "}
+          <a href={items.result.full_short_link} style={{ color: "blue" }}>{items.result.full_short_link}</a>
         </h1>
       );
     }
@@ -63,7 +63,7 @@ export default function Shortner() {
         <h1>URL Not allowed or invalid URL</h1>
       )}
 
-      <div>
+      <div className="urls">
         <Showlist />
       </div>
     </div>
