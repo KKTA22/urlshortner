@@ -8,10 +8,12 @@ import "./App.css";
 
 function App() {
   const [user, setUser] = useState(null);
+  const [loading, setloading] = useState(true);
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       setUser(user);
+      setloading(false);
     });
   }, []);
 
@@ -20,7 +22,7 @@ function App() {
   return (
     <div className="app">
       <h1>Welcome to Url shortner</h1>
-      {user ? <Home user={user} /> : <Login />}
+      {loading ? <h1>Loading</h1> : user ? <Home user={user} /> : <Login />}
     </div>
   );
 }
